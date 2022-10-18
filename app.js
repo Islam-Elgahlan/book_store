@@ -1,5 +1,3 @@
-// from clone
-// commit
 const express = require("express");
 const cron = require('node-cron');
 const app = express();
