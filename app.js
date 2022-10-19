@@ -2,7 +2,7 @@ const express = require("express");
 const cron = require('node-cron');
 const app = express();
 require("dotenv").config();
-const port = process.env.port || 3800;
+const port = process.env.PORT || 8080;
 const connection = require("./configuration/configurationDB");
 
 //* start Routes paths *//
