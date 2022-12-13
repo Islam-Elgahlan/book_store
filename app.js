@@ -23,8 +23,8 @@ app.use(userRoutes);
 app.use(bookRoutes);
 app.use(cartRoutes);
 
-app.get("/" , (req,res)=>{
-    res.send("hellow");
-})
+// app.get("/" , (req,res)=>{
+//     res.send("hellow");
+// })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
