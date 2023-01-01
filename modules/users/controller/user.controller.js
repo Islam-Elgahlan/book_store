@@ -52,7 +52,7 @@ const signUp = async (req, res) => {
         .status(StatusCodes.BAD_REQUEST)
         .json({ message: "email is already exist" });
     } else {
-      let imgUrl = process.env.IMGURL + req.file.filename;
+      let imgUrl = process.env.IMGURL_DEPLOY + req.file.filename;
       const newUser = new User({
         name,
         email,
@@ -136,7 +136,7 @@ const updateUser = async (req, res) => {
     password = req.body.password;
     // avatar = imgUrl;
     let options = { new: true };
-    let newUrl = process.env.IMGURL + req.file.filename;
+    let newUrl = process.env.IMGURL_DEPLOY + req.file.filename;
     const user = await User.findById(id);
     if (!user) {
       res.status(StatusCodes.BAD_REQUEST).json({ message: "user not found" });
