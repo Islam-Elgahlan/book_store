@@ -82,11 +82,12 @@ const signIn = async (req, res) => {
     const user = await User.findOne({ email });
     // console.log(user);
     if (!user) {
-      res.Status(StatusCodes.BAD_REQUEST).json({ message: "invalid email" });
+      // console.log(req.body);
+     return res.status(StatusCodes.BAD_REQUEST).json({ message: "invalid email" });
     }
     const match = await bcrypt.compare(password, user.password);
-    if (!match) {
-      res
+     if (!match) {
+      return res
         .status(StatusCodes.BAD_REQUEST)
         .json({ message: "invalid email or password" });
     }
@@ -106,7 +107,7 @@ const signIn = async (req, res) => {
       },
     });
   } catch (error) {
-    res.status(StatusCodes.BAD_REQUEST).json({ message: "error", error });
+    return res.status(StatusCodes.BAD_REQUEST).json({ message: "error", error });
   }
 };
 
