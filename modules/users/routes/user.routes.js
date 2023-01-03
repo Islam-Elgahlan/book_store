@@ -32,7 +32,7 @@ router.post(
   validateRequest(addUserSchema),
   signUp
 );
-router.get(SIGNIN, validateRequest(signInSchema), signIn);
+router.post(SIGNIN, validateRequest(signInSchema), signIn);
 router.delete(DELETE_USER, isAutoraized(DELETE_USER), deleteUser);
 router.patch(
   UPDATE_USER,
