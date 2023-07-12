@@ -152,7 +152,7 @@ const updateUser = async (req, res) => {
     res.json({ message: "error", data: error });
   }
 };
-//Start Update User //
+//End Update User //
 module.exports = {
   getAllUsers,
   getUser,
